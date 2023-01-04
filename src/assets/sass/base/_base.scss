@@ -134,3 +134,20 @@ div.container{
 		background: $ccorp;
 	}
 }
+
+// theme buttons
+.theme_button{
+	a,button{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5px 10px;
+		background-color: $cwhite;
+		color: $cdark;
+		transition: 0.4s;
+		cursor: pointer;
+		&:hover{
+			background-color: $ccorp;
+		}
+	}
+}
