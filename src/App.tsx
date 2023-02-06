@@ -4,7 +4,7 @@ function App() {
     return (
         <>
             <ToastContainer autoClose={1000} />
-            <div className="App">Welcome to the React App</div>
+            <div className="App">Welcome to the React App!!</div>
         </>
     );
 }

@@ -7,12 +7,15 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { rootReducer } from "./redux/rootReducer";
 
-let store = createStore(rootReducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f));
+const windowObject: any = {...window}
+let store = createStore(rootReducer, compose(applyMiddleware(thunk), windowObject.__REDUX_DEVTOOLS_EXTENSION__ ? windowObject.__REDUX_DEVTOOLS_EXTENSION__() : (f:any) => f));
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode >
     <Provider store={store}>
         <App />
     </Provider>
-);
+  </React.StrictMode>,
+)
 export { store };
